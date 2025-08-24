@@ -177,8 +177,9 @@ main {
     justify-content: center;
     padding: 2rem;
     padding-top: 6rem;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, #020101 0%, #050302 20%, #0a0503 40%, #1a0f0a 60%, #2d1810 80%, #4a2c1a 100%);
     position: relative;
+    overflow: hidden;
 }
 
 .hero::before {
@@ -189,9 +190,44 @@ main {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 20% 80%, rgba(255, 140, 0, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(210, 105, 30, 0.06) 0%, transparent 50%);
+        radial-gradient(circle at 20% 80%, rgba(74, 44, 26, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(45, 24, 16, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(26, 15, 10, 0.05) 0%, transparent 50%);
     pointer-events: none;
+    animation: backgroundShift 20s ease-in-out infinite;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 60% 60%, rgba(74, 44, 26, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 90% 10%, rgba(45, 24, 16, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    animation: backgroundShift 25s ease-in-out infinite reverse;
+}
+
+@keyframes backgroundShift {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.8;
+    }
+    25% {
+        transform: translate(-10px, -10px) scale(1.05);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(10px, -5px) scale(0.95);
+        opacity: 0.9;
+    }
+    75% {
+        transform: translate(-5px, 10px) scale(1.02);
+        opacity: 1;
+    }
 }
 
 .hero-content {
@@ -322,16 +358,24 @@ main {
 }
 
 .main-logo {
-    width: 280px;
-    height: 280px;
-    border-radius: 16px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
+    width: 350px;
+    height: 350px;
+    border-radius: 20px;
+    box-shadow: 
+        0 25px 80px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(255, 140, 0, 0.2),
+        0 0 40px rgba(255, 140, 0, 0.3);
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 0 20px rgba(255, 140, 0, 0.2));
 }
 
 .main-logo:hover {
-    transform: scale(1.02);
-    box-shadow: 0 25px 80px rgba(255, 140, 0, 0.2);
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 
+        0 35px 100px rgba(0, 0, 0, 0.7),
+        0 0 0 2px rgba(255, 140, 0, 0.4),
+        0 0 60px rgba(255, 140, 0, 0.5);
+    filter: drop-shadow(0 0 30px rgba(255, 140, 0, 0.4));
 }
 
 /* About Section */
@@ -765,8 +809,8 @@ footer {
     }
     
     .main-logo {
-        width: 250px;
-        height: 250px;
+        width: 280px;
+        height: 280px;
     }
     
     .about-content {
@@ -783,29 +827,63 @@ footer {
     .nav-container {
         flex-direction: column;
         gap: 1rem;
+        padding: 0.5rem 0;
     }
     
     .nav-links {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: row;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+    
+    .hero {
+        padding: 1rem;
+        padding-top: 8rem;
+        min-height: 90vh;
     }
     
     .hero h1 {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
+        line-height: 1.2;
     }
     
     .hero-subtitle {
         font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .hero-btn {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+        padding: 1rem 2rem;
     }
     
     .contract-box {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .contract-address {
+        font-size: 0.8rem;
+        text-align: center;
     }
     
     .main-logo {
-        width: 200px;
-        height: 200px;
+        width: 220px;
+        height: 220px;
     }
     
     .about h2,
@@ -814,10 +892,20 @@ footer {
     .how-to-buy h2,
     .social h2 {
         font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .about,
+    .mission,
+    .tokenomics,
+    .how-to-buy,
+    .social {
+        padding: 3rem 0;
     }
     
     .steps-container {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     .step {
@@ -826,10 +914,16 @@ footer {
     
     .tokenomics-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+    
+    .tokenomics-card {
+        padding: 1.5rem;
     }
     
     .social-links {
         gap: 1rem;
+        justify-content: center;
     }
     
     .social-link {
@@ -846,12 +940,54 @@ footer {
     .footer-links {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 1rem;
+    }
+    
+    .scroll-arrow {
+        bottom: 20px;
+    }
+    
+    .arrow-icon {
+        font-size: 1.5rem;
+    }
+    
+    .scroll-text {
+        font-size: 0.8rem;
     }
 }
 
 @media (max-width: 480px) {
+    .nav-container {
+        padding: 0.5rem 1rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+    
+    .hero {
+        padding: 1rem;
+        padding-top: 7rem;
+    }
+    
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-btn {
+        max-width: 250px;
+        padding: 0.9rem 1.5rem;
+        font-size: 0.9rem;
     }
     
     .contract-address {
@@ -869,16 +1005,100 @@ footer {
     .how-to-buy h2,
     .social h2 {
         font-size: 1.8rem;
+        margin-bottom: 1.5rem;
     }
     
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
+    .about,
+    .mission,
+    .tokenomics,
+    .how-to-buy,
+    .social {
+        padding: 2rem 0;
     }
     
-    .hero-btn {
-        width: 100%;
-        max-width: 250px;
-        text-align: center;
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .step {
+        padding: 1.2rem;
+    }
+    
+    .tokenomics-card {
+        padding: 1.2rem;
+    }
+    
+    .social-link {
+        min-width: 70px;
+        padding: 1rem;
+    }
+    
+    .social-link i {
+        font-size: 1.8rem;
+    }
+    
+    .social-link.twitter .x-icon {
+        font-size: 2rem;
+    }
+    
+    .buy-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+    
+    .scroll-arrow {
+        bottom: 15px;
+    }
+    
+    .arrow-icon {
+        font-size: 1.3rem;
+    }
+    
+    .scroll-text {
+        font-size: 0.75rem;
+    }
+}
+
+/* Scroll Arrow */
+.scroll-arrow {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.scroll-arrow:hover {
+    color: #ff8c00;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+.arrow-icon {
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+}
+
+.scroll-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
     }
 }
