@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$Rizzgiving</title>
+    <link rel="icon" type="image/png" href="assets/rizzgivingnoback.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="assets/rizzgivingnoback.png" alt="Rizzgiving Logo">
+                    <span>Rizzgiving</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#mission">Mission</a>
+                    <a href="#tokenomics">Tokenomics</a>
+                    <a href="#how-to-buy">How to Buy</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Animated Background Elements -->
+        <div class="bg-logo bg-logo-1"></div>
+        <div class="bg-logo bg-logo-2"></div>
+        <div class="bg-logo bg-logo-3"></div>
+        <div class="bg-logo bg-logo-4"></div>
+        <div class="bg-logo bg-logo-5"></div>
+        <div class="bg-logo bg-logo-6"></div>
+        
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>$Rizzgiving</h1>
+                    <p class="hero-subtitle">$RIZZGIVING, ITS THAT THANKFUL RIZZGIVING TIME OF THE YEAR, LOAD YOUR BAGS!</p>
+                    
+                    <div class="contract-section">
+                        <h3>Contract Address:</h3>
+                        <div class="contract-box">
+                            <span class="contract-address">5D2b7XPuBbNXgJ2W2CnvU3iPGSrqoeMcSPCazEv5pump</span>
+                            <button class="copy-btn" onclick="copyContract()">Copy</button>
+                        </div>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <a href="https://dexscreener.com/solana/62zydka7vgbztb5rqat52lx39fhzt2uroh9rxxoaccro" class="hero-btn primary" target="_blank">View on DexScreener</a>
+                        <a href="#how-to-buy" class="hero-btn secondary">How to Buy</a>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="assets/rizzgiving.jpg" alt="Rizzgiving Logo" class="main-logo">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About $Rizzgiving</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>$Rizzgiving is the ultimate Thanksgiving-themed token that brings the spirit of gratitude and giving to the Solana blockchain. Born from the idea that Thanksgiving should be celebrated year-round, we're creating a community that embodies the values of thankfulness, generosity, and togetherness.</p>
+                        <p>Our token represents more than just a digital asset – it's a movement that encourages people to be thankful for what they have while building a strong, supportive community. Whether you're a crypto veteran or just starting your journey, $Rizzgiving welcomes everyone to join our thankful family.</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>Community Driven</h3>
+                            <p>Built by the community, for the community</p>
+                        </div>
+                        <div class="stat">
+                            <h3>Transparent</h3>
+                            <p>Open and honest about everything we do</p>
+                        </div>
+                        <div class="stat">
+                            <h3>Secure</h3>
+                            <p>Audited and safe for all investors</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mission" class="mission">
+            <div class="container">
+                <h2>Our Mission</h2>
+                <div class="mission-content">
+                    <div class="mission-text">
+                        <h3>Building a Thankful Community</h3>
+                        <p>Our mission is to create the most thankful and generous community in the crypto space. We believe that gratitude is the foundation of success, and by fostering an environment of appreciation and support, we can achieve incredible things together.</p>
+                        
+                        <h3>Giving Back</h3>
+                        <p>We're committed to giving back to our community and the world. A portion of our tokenomics is dedicated to charitable causes, helping those in need and spreading the spirit of Thanksgiving throughout the year.</p>
+                        
+                        <h3>Innovation & Growth</h3>
+                        <p>We're constantly innovating and looking for new ways to add value to our holders. From partnerships to new features, we're always working to make $Rizzgiving the best it can be.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tokenomics" class="tokenomics">
+            <div class="container">
+                <h2>Tokenomics</h2>
+                <div class="tokenomics-grid">
+                    <div class="tokenomics-card">
+                        <div class="tokenomics-icon">🔥</div>
+                        <h3>Total Supply</h3>
+                        <p class="tokenomics-value">1B</p>
+                        <p class="tokenomics-desc">1B tokens total supply</p>
+                    </div>
+                    <div class="tokenomics-card">
+                        <div class="tokenomics-icon">💎</div>
+                        <h3>Liquidity</h3>
+                        <p class="tokenomics-value">100%</p>
+                        <p class="tokenomics-desc">Burned forever</p>
+                    </div>
+                    <div class="tokenomics-card">
+                        <div class="tokenomics-icon">✅</div>
+                        <h3>Tax</h3>
+                        <p class="tokenomics-value">0%</p>
+                        <p class="tokenomics-desc">No buy or sell tax</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-to-buy" class="how-to-buy">
+            <div class="container">
+                <h2>How to Buy</h2>
+                
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-icon phantom">
+                            <img src="assets/phantom.png" alt="Phantom Wallet">
+                        </div>
+                        <div class="step-number">Step 1</div>
+                        <div class="step-content">
+                            <p><strong>Mobile Users:</strong> Download the Phantom app for free.</p>
+                            <p><strong>Desktop Users:</strong> Download the Phantom chrome extension</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-icon solana">
+                            <img src="assets/solana.svg" alt="Solana">
+                        </div>
+                        <div class="step-number">Step 2</div>
+                        <div class="step-content">
+                            <p>Fund your wallet with Solana, you can buy Solana from an exchange or cross chain swap and send it to your wallet.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-icon exchange">
+                            <img src="assets/jupter.svg" alt="Jupiter" class="exchange-icon">
+                        </div>
+                        <div class="step-number">Step 3</div>
+                        <div class="step-content">
+                            <p>Go to Jupiter and swap your Solana for <strong>$Rizzgiving</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <a href="https://jup.ag/swap/SOL-5D2b7XPuBbNXgJ2W2CnvU3iPGSrqoeMcSPCazEv5pump" class="buy-button" target="_blank">Buy $Rizzgiving Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="social">
+            <div class="container">
+                <h2>Join Our Community</h2>
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@rizzgivingofficial" class="social-link tiktok" target="_blank">
+                        <i class="fab fa-tiktok"></i>
+                        <span class="social-text">TikTok</span>
+                    </a>
+                    <a href="https://www.instagram.com/rizzgiving" class="social-link instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                        <span class="social-text">Instagram</span>
+                    </a>
+                    <a href="https://x.com/RizzgivingPump" class="social-link twitter" target="_blank">
+                        <span class="x-icon">X</span>
+                        <span class="social-text">Twitter</span>
+                    </a>
+                    <a href="https://dexscreener.com/solana/62zydka7vgbztb5rqat52lx39fhzt2uroh9rxxoaccro" class="social-link dexscreener" target="_blank">
+                        <i class="fas fa-chart-line"></i>
+                        <span class="social-text">DexScreener</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/rizzgivingnoback.png" alt="Rizzgiving Logo">
+                    <span>$Rizzgiving</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#mission">Mission</a>
+                    <a href="#tokenomics">Tokenomics</a>
+                    <a href="#how-to-buy">How to Buy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Rizzgiving. All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
